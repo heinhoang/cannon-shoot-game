@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from './components/header/Header';
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 
-class HelloMessage extends React.Component {
-    render() {
-        return <div>
-            <Header/>
-            <div className="container">
-                <h1>Hello {this.props.name}</h1>
-            </div>
-        </div>
-    }
-}
+import reducer from "./reducers";
+import Container from "./containers";
 
-let App = document.getElementById("app");
+const store = createStore(
+    reducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-ReactDOM.render(<HelloMessage name="Yomi" />, App);
+ReactDOM.render(
+    <Provider store={store}>
+        <Container />
+    </Provider>
+    , document.getElementById('app'));
