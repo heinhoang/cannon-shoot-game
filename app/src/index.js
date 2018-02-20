@@ -6,6 +6,8 @@ import { Provider } from "react-redux";
 import reducer from "./reducers";
 import Container from "./containers";
 
+import './index.scss';
+
 const store = createStore(
     reducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
