@@ -1,8 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
+import Canvas from "../components/Canvas";
 
 const Game = () => (
-    <div>
-        ok
-    </div>
+    <Canvas />
 );
 export default Game;
