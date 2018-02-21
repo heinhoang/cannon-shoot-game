@@ -21055,7 +21055,81 @@ var CannonBase = function CannonBase() {
 };
 
 exports.default = CannonBase;
-},{"react":10,"../utils/fomulas":82}],17:[function(require,module,exports) {
+},{"react":10,"../utils/fomulas":82}],83:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _fomulas = require('../utils/fomulas');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CannonPipe = function CannonPipe(props) {
+    var cannonPipeStyle = {
+        fill: '#999',
+        stroke: '#666',
+        strokeWidth: '2px'
+    };
+
+    var transform = 'rotate(' + props.rotation + ', 0, 0)';
+
+    var muzzleWidth = 40;
+    var halfMuzzle = 20;
+    var height = 100;
+    var yBasis = 70;
+
+    var cubicBezierCurve = {
+        initialAxis: {
+            x: -halfMuzzle,
+            y: -yBasis
+        },
+        initialControlPoint: {
+            x: -40,
+            y: height * 1.7
+        },
+        endingControlPoint: {
+            x: 80,
+            y: height * 1.7
+        },
+        endingAxis: {
+            x: muzzleWidth,
+            y: 0
+        }
+    };
+
+    return _react2.default.createElement(
+        'g',
+        { transform: transform },
+        _react2.default.createElement('path', {
+            style: cannonPipeStyle,
+            d: (0, _fomulas.pathFromBezierCurve)(cubicBezierCurve)
+        }),
+        _react2.default.createElement('line', {
+            x1: -halfMuzzle,
+            y1: -yBasis,
+            x2: halfMuzzle,
+            y2: -yBasis,
+            style: cannonPipeStyle
+        })
+    );
+};
+
+CannonPipe.proptypes = {
+    rotation: _propTypes2.default.number.isRequired
+};
+
+exports.default = CannonPipe;
+},{"react":10,"prop-types":47,"../utils/fomulas":82}],17:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21078,6 +21152,10 @@ var _CannonBase = require('./CannonBase');
 
 var _CannonBase2 = _interopRequireDefault(_CannonBase);
 
+var _CannonPipe = require('./CannonPipe');
+
+var _CannonPipe2 = _interopRequireDefault(_CannonPipe);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Canvas = function Canvas(props) {
@@ -21094,12 +21172,13 @@ var Canvas = function Canvas(props) {
         },
         _react2.default.createElement(_Sky2.default, null),
         _react2.default.createElement(_Ground2.default, null),
-        _react2.default.createElement(_CannonBase2.default, null)
+        _react2.default.createElement(_CannonBase2.default, null),
+        _react2.default.createElement(_CannonPipe2.default, { rotation: '45deg' })
     );
 };
 
 exports.default = Canvas;
-},{"react":10,"./Sky":32,"./Ground":33,"./CannonBase":81}],8:[function(require,module,exports) {
+},{"react":10,"./Sky":32,"./Ground":33,"./CannonBase":81,"./CannonPipe":83}],8:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
