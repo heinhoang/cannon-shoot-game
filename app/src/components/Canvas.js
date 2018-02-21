@@ -1,6 +1,7 @@
 import React from 'react';
 import Sky from './Sky';
 import Ground from './Ground';
+import CannonBase from './CannonBase';
 
 const Canvas = (props) => {
     // Using viewBox to move coordinates from (0, 0) to (window.innerWidth/2, window.innerHeight - 100)
@@ -14,6 +15,7 @@ const Canvas = (props) => {
     >
         <Sky />
         <Ground />
+        <CannonBase />
     </svg>);
 };
 

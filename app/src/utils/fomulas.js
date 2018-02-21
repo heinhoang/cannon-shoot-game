@@ -13,10 +13,10 @@
  * @param {object} cubicBezierCurve 
  */
 export const pathFromBezierCurve = (cubicBezierCurve) => {
-    const {
+  const {
     initialAxis, initialControlPoint, endingControlPoint, endingAxis,
   } = cubicBezierCurve;
-    return `
+  return `
     M${initialAxis.x} ${initialAxis.y}
     c ${initialControlPoint.x} ${initialControlPoint.y}
     ${endingControlPoint.x} ${endingControlPoint.y}
