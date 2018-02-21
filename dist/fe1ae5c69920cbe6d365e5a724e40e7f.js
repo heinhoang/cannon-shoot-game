@@ -21173,7 +21173,7 @@ var Canvas = function Canvas(props) {
         _react2.default.createElement(_Sky2.default, null),
         _react2.default.createElement(_Ground2.default, null),
         _react2.default.createElement(_CannonBase2.default, null),
-        _react2.default.createElement(_CannonPipe2.default, { rotation: '45deg' })
+        _react2.default.createElement(_CannonPipe2.default, { rotation: '45' })
     );
 };
 

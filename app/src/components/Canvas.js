@@ -17,7 +17,7 @@ const Canvas = (props) => {
         <Sky />
         <Ground />
         <CannonBase />
-        <CannonPipe rotation='45deg' />
+        <CannonPipe rotation='45' />
     </svg>);
 };
 
