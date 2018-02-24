@@ -3,6 +3,7 @@ A game using ReactJS + SVG. Our cannon will shoot aliens (UFO)
 ## Prerequisites
 - Knowledge on ReactJS, SVG
 - NodeJS 8 (parcel may not work with NodeJS 6,7)
+- `npm install -g parcel-bundler`
 
 ## Getting Started
 ```

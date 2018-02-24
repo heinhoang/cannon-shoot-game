@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Sky from './Sky';
 import Ground from './Ground';
 import CannonBase from './CannonBase';
@@ -17,8 +19,12 @@ const Canvas = (props) => {
         <Sky />
         <Ground />
         <CannonBase />
-        <CannonPipe rotation='45' />
+        <CannonPipe rotation={props.angle} />
     </svg>);
+};
+
+Canvas.prototypes = {
+    angle: PropTypes.number
 };
 
 export default Canvas;
