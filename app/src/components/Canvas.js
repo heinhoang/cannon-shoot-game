@@ -15,6 +15,7 @@ const Canvas = (props) => {
         id="game-canvas"
         preserveAspectRatio="xMaxYMax none"
         viewBox={viewBox}
+        onMouseMove={props.trackMouse}
     >
         <Sky />
         <Ground />
@@ -24,7 +25,8 @@ const Canvas = (props) => {
 };
 
 Canvas.prototypes = {
-    angle: PropTypes.number
+    angle: PropTypes.number.isRequired,
+    trackMouse: PropTypes.func.isRequired
 };
 
 export default Canvas;
