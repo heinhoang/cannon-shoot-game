@@ -20994,11 +20994,17 @@ var pathFromBezierCurve = exports.pathFromBezierCurve = function pathFromBezierC
   return '\n    M' + initialAxis.x + ' ' + initialAxis.y + '\n    c ' + initialControlPoint.x + ' ' + initialControlPoint.y + '\n    ' + endingControlPoint.x + ' ' + endingControlPoint.y + '\n    ' + endingAxis.x + ' ' + endingAxis.y + '\n  ';
 };
 
+/**
+ * mouse position on auto-scaling canvas
+ * Reference:
+ * - https://stackoverflow.com/a/10298843/1232793
+ * - https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/
+ * @param {Event} event 
+ */
 var getCanvasPosition = exports.getCanvasPosition = function getCanvasPosition(event) {
-  // mouse position on auto-scaling canvas
-  // https://stackoverflow.com/a/10298843/1232793
 
   var svg = document.getElementById('game-canvas');
+  //create the SVGPoint in the user coordinate system
   var point = svg.createSVGPoint();
 
   point.x = event.clientX;

@@ -24,11 +24,17 @@ export const pathFromBezierCurve = (cubicBezierCurve) => {
   `;
 };
 
+/**
+ * mouse position on auto-scaling canvas
+ * Reference:
+ * - https://stackoverflow.com/a/10298843/1232793
+ * - https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/
+ * @param {Event} event 
+ */
 export const getCanvasPosition = (event) => {
-  // mouse position on auto-scaling canvas
-  // https://stackoverflow.com/a/10298843/1232793
 
   const svg = document.getElementById('game-canvas');
+  //create the SVGPoint in the user coordinate system
   const point = svg.createSVGPoint();
 
   point.x = event.clientX;
